@@ -23,9 +23,6 @@ const fizzBuzz = (
   }
 };
 
-// fizzBuzz();
+fizzBuzz();
 
-fizzBuzz(1, 10, [
-  { divisor: 2, message: "kutya" },
-  { divisor: 3, message: "macska" },
-]);
+module.exports = fizzBuzz;
