@@ -1,15 +1,31 @@
-const FizzBuzz = () => {
-  for (let i = 1; i < 101; i++) {
-    if (i % 15 == 0) {
-      console.log("FizzBuzz");
-    } else if (i % 3 == 0) {
-      console.log("Fizz");
-    } else if (i % 5 == 0) {
-      console.log("Buzz");
-    } else {
-      console.log(i);
-    }
+const fizzBuzz = (
+  start = 1,
+  end = 100,
+  triggers = [
+    {
+      divisor: 3,
+      message: "Fizz",
+    },
+    {
+      divisor: 5,
+      message: "Buzz",
+    },
+  ]
+) => {
+  for (let i = start; i < end + 1; i++) {
+    let result = "";
+    triggers.forEach((trigger) => {
+      if (i % trigger.divisor == 0) {
+        result += trigger.message;
+      }
+    });
+    console.log(result || i);
   }
 };
 
-FizzBuzz();
+// fizzBuzz();
+
+fizzBuzz(1, 10, [
+  { divisor: 2, message: "kutya" },
+  { divisor: 3, message: "macska" },
+]);
